@@ -4,6 +4,7 @@ RUN apk add git
 WORKDIR /go/src/app
 COPY . .
 ## all routing packages
+RUN go get github.com/vikbert/go-todo-app
 RUN go get github.com/gorilla/mux
 ## all routing packages
 RUN GOOS=linux go build -ldflags="-s -w" -o ./bin/test ./main.go
